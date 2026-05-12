@@ -6,8 +6,8 @@ export default async function Footer() {
   const t = await getTranslations();
 
   return (
-    <footer className="bg-[var(--color-text)] text-white mt-auto">
-      <div className="container pt-16 pb-12">
+    <footer className="bg-[var(--color-text)] text-white mt-auto" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
+      <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* About */}
           <div>
