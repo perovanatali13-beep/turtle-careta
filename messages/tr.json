@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "whatYouCanDo": "Ne Yapabilirsiniz",
+    "foundTurtle": "Kaplumbağa Bulduysanız",
+    "foundNest": "Yuva Bulduysanız",
+    "someoneTouchingNest": "Birileri Yuvaya Dokunuyorsa",
+    "beachRules": "Sahil Davranış Kuralları",
+    "reportProblem": "Sorun Nasıl Bildirilir",
+    "support": "Projeyi Destekleyin",
+    "volunteers": "Gönüllüler",
+    "volunteerInfo": "Gönüllü Bilgileri",
+    "faq": "Sık Sorulan Sorular",
+    "whatWeDo": "Ne Yapıyoruz",
+    "carettaConservation": "Caretta caretta Koruma",
+    "sandLily": "Kum Zambağı Koruması",
+    "publications": "Bilimsel Yayınlar",
+    "hotelsCoast": "Oteller ve Kıyı Koruma",
+    "beachCleanup": "Sahil Plastik Temizliği",
+    "news": "Haberler",
+    "allNews": "Tüm Haberler",
+    "ecoActions": "Ekolojik Eylemler",
+    "turtleRescue": "Kaplumbağa Kurtarma",
+    "cleanups": "Sahil Temizlikleri",
+    "coastNews": "Kıyı Koruma Haberleri",
+    "research": "Araştırma ve Yayınlar"
+  },
+  "home": {
+    "heroTitle": "Gazipaşa'da Caretta caretta Koruma",
+    "heroSubtitle": "Deniz kaplumbağası yuvalarını izliyor, kıyı ekosistemlerini koruyor ve yerel toplulukları eğitiyoruz",
+    "foundNestBtn": "Yuva bulduysanız ne yapmalı",
+    "touchingNestBtn": "Birileri yuvaya dokunuyorsa",
+    "supportBtn": "Projeyi Destekle",
+    "latestNews": "Son Haberler",
+    "viewAllNews": "Tüm Haberleri Gör",
+    "learnMore": "Daha Fazla Bilgi"
+  },
+  "search": {
+    "placeholder": "Sitede ara...",
+    "title": "Arama",
+    "resultsFor": "Arama sonuçları",
+    "noResults": "Sorgunuz için sonuç bulunamadı",
+    "results": "sonuç"
+  },
+  "common": {
+    "readMore": "Devamını oku",
+    "backToNews": "Haberlere Dön",
+    "home": "Ana Sayfa",
+    "allCategories": "Tüm Kategoriler",
+    "publishedAt": "Yayınlandı",
+    "share": "Paylaş",
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu"
+  },
+  "news": {
+    "title": "Haberler",
+    "categories": {
+      "all": "Tüm Haberler",
+      "ecology": "Ekolojik Eylemler",
+      "rescue": "Kaplumbağa Kurtarma",
+      "cleanup": "Sahil Temizlikleri",
+      "coast": "Kıyı Koruma",
+      "research": "Araştırmalar"
+    }
+  },
+  "volunteers": {
+    "title": "Gönüllüler",
+    "info": "Gönüllü Bilgileri",
+    "faq": "Sık Sorulan Sorular"
+  },
+  "footer": {
+    "description": "Türkiye'nin Gazipaşa sahilinde Caretta caretta deniz kaplumbağası yuvalarını koruyoruz.",
+    "contacts": "İletişim",
+    "followUs": "Bizi Takip Edin",
+    "rights": "Tüm hakları saklıdır"
+  },
+  "admin": {
+    "title": "Yönetim Paneli",
+    "news": "Haberler",
+    "pages": "Sayfalar",
+    "media": "Medya",
+    "settings": "Ayarlar",
+    "logout": "Çıkış",
+    "add": "Ekle",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "published": "Yayınlandı",
+    "draft": "Taslak",
+    "confirmDelete": "Silmek istediğinizden emin misiniz?"
+  }
+}

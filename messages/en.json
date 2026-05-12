@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "whatYouCanDo": "What You Can Do",
+    "foundTurtle": "If You Found a Turtle",
+    "foundNest": "If You Found a Nest",
+    "someoneTouchingNest": "If Someone Is Touching a Nest",
+    "beachRules": "Beach Behavior Rules",
+    "reportProblem": "How to Report a Problem",
+    "support": "Support the Project",
+    "volunteers": "Volunteers",
+    "volunteerInfo": "Volunteer Information",
+    "faq": "FAQ",
+    "whatWeDo": "What We Do",
+    "carettaConservation": "Conservation of Caretta caretta",
+    "sandLily": "Sand Lily Conservation",
+    "publications": "Scientific Publications",
+    "hotelsCoast": "Hotels & Coastal Protection",
+    "beachCleanup": "Beach Plastic Cleanup",
+    "news": "News",
+    "allNews": "All News",
+    "ecoActions": "Ecological Actions",
+    "turtleRescue": "Turtle Rescue",
+    "cleanups": "Beach Cleanups",
+    "coastNews": "Coastal Protection News",
+    "research": "Research & Publications"
+  },
+  "home": {
+    "heroTitle": "Protecting Caretta caretta in Gazipaşa",
+    "heroSubtitle": "We monitor sea turtle nests, protect coastal ecosystems and educate local communities",
+    "foundNestBtn": "What to do if you found a nest",
+    "touchingNestBtn": "If someone is touching a nest",
+    "supportBtn": "Support the Project",
+    "latestNews": "Latest News",
+    "viewAllNews": "View All News",
+    "learnMore": "Learn More"
+  },
+  "search": {
+    "placeholder": "Search the site...",
+    "title": "Search",
+    "resultsFor": "Results for",
+    "noResults": "No results found for your query",
+    "results": "results"
+  },
+  "common": {
+    "readMore": "Read more",
+    "backToNews": "Back to News",
+    "home": "Home",
+    "allCategories": "All Categories",
+    "publishedAt": "Published",
+    "share": "Share",
+    "loading": "Loading...",
+    "error": "An error occurred"
+  },
+  "news": {
+    "title": "News",
+    "categories": {
+      "all": "All News",
+      "ecology": "Ecological Actions",
+      "rescue": "Turtle Rescue",
+      "cleanup": "Beach Cleanups",
+      "coast": "Coastal Protection",
+      "research": "Research"
+    }
+  },
+  "volunteers": {
+    "title": "Volunteers",
+    "info": "Volunteer Information",
+    "faq": "Frequently Asked Questions"
+  },
+  "footer": {
+    "description": "We protect Caretta caretta sea turtle nests along the coast of Gazipaşa, Turkey.",
+    "contacts": "Contact",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "news": "News",
+    "pages": "Pages",
+    "media": "Media",
+    "settings": "Settings",
+    "logout": "Log out",
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "published": "Published",
+    "draft": "Draft",
+    "confirmDelete": "Are you sure you want to delete this?"
+  }
+}
