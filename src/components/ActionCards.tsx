@@ -1,11 +1,11 @@
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
-import { LifeBuoy, Users, Megaphone } from 'lucide-react';
+import { HandHeart, Users, Megaphone } from 'lucide-react';
 
 const CARDS = [
   {
     key: 'help',
-    icon: LifeBuoy,
+    icon: HandHeart,
     color: '#e07b39',
     bg: '#fff5ef',
     href: '/what-you-can-do/found-nest',
@@ -30,7 +30,7 @@ const CONTENT: Record<string, Record<string, { title: string; desc: string }>> =
   ru: {
     help:      { title: 'Помощь',                         desc: 'Нашёл гнездо или кто-то его трогает? Узнай, что делать.' },
     volunteer: { title: 'Стать волонтёром',               desc: 'Присоединяйся к нам и помоги защитить черепах на месте.' },
-    spread:    { title: 'Расскажи о нас',                 desc: 'Поделись с родными, знакомыми и детьми — это важно.' },
+    spread:    { title: 'Рассказать о нас',                desc: 'Поделись с родными, знакомыми и детьми — это важно.' },
     support:   { title: 'Поддержи нас',                   desc: 'Твоя поддержка помогает нам продолжать работу.' },
   },
   en: {
