@@ -4,6 +4,7 @@ import { useState, useTransition } from 'react';
 import { createNews, updateNews } from '../../actions';
 import ImagePicker from './ImagePicker';
 import type { NewsItem } from '@/lib/supabase/types';
+import RichEditor from '@/components/RichEditor';
 
 const CATEGORIES = [
   { value: 'ecology', label: 'Экологические акции' },
@@ -105,9 +106,11 @@ export default function NewsForm({ item, initialImages = [] }: Props) {
               </div>
               <div>
                 <label className={labelClass}>Текст статьи ({code.toUpperCase()})</label>
-                <textarea name={`content_${code}`} rows={10}
+                <RichEditor
+                  name={`content_${code}`}
                   defaultValue={(item as unknown as Record<string,string>)?.[`content_${code}`] ?? ''}
-                  className={inputClass} placeholder="Полный текст новости..." />
+                  placeholder="Полный текст новости..."
+                />
               </div>
             </div>
           </div>

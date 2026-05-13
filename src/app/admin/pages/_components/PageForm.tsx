@@ -3,6 +3,7 @@
 import { useState, useTransition } from 'react';
 import { updatePage } from '../../actions';
 import type { PageContent } from '@/lib/supabase/types';
+import RichEditor from '@/components/RichEditor';
 
 const LANGS = [
   { code: 'ru', label: 'Русский' },
@@ -50,10 +51,11 @@ export default function PageForm({ page }: { page: PageContent }) {
               </div>
               <div>
                 <label className={labelClass}>Содержимое ({code.toUpperCase()})</label>
-                <textarea name={`content_${code}`} rows={14}
+                <RichEditor
+                  name={`content_${code}`}
                   defaultValue={(page as unknown as Record<string,string>)[`content_${code}`] ?? ''}
-                  className={inputClass}
-                  placeholder="Текст страницы (поддерживается HTML)..." />
+                  placeholder="Текст страницы..."
+                />
               </div>
             </div>
           </div>
