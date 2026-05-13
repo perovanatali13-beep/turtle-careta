@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none"
+     stroke="white" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- HEAD -->
+  <ellipse cx="168" cy="58" rx="13" ry="11" stroke-width="7"/>
+  <circle cx="174" cy="54" r="3" fill="white"/>
+
+  <!-- BODY top arc -->
+  <path d="M55 82 C80 55 130 50 156 60" stroke-width="7"/>
+
+  <!-- BODY bottom arc -->
+  <path d="M50 105 C80 120 130 116 156 72" stroke-width="7"/>
+
+  <!-- UPPER FRONT FLIPPER -->
+  <path d="M75 82 C58 64 36 46 46 68 C53 82 70 84 75 82" stroke-width="6.5"/>
+
+  <!-- LOWER FRONT FLIPPER -->
+  <path d="M65 103 C48 120 34 140 46 148 C58 155 68 136 70 112" stroke-width="6.5"/>
+
+  <!-- INNER BODY LINE (shell / plastron divider) -->
+  <path d="M60 93 C90 86 135 82 155 66" stroke-width="4"/>
+
+  <!-- WAVE -->
+  <path d="M28 158 C52 149 76 163 108 154 C138 146 156 158 182 152" stroke-width="4.5"/>
+
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 9 224 224"
+     fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="grad" x1="50" y1="10" x2="150" y2="222" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#FF6B35"/>
+      <stop offset="33%"  stop-color="#FFD23F"/>
+      <stop offset="67%"  stop-color="#3BCEAC"/>
+      <stop offset="100%" stop-color="#0077B6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- HEAD -->
+  <ellipse cx="100" cy="33" rx="18" ry="14"
+           stroke="url(#grad)" stroke-width="3"/>
+  <!-- Eyes -->
+  <circle cx="92"  cy="30" r="2.5" fill="url(#grad)"/>
+  <circle cx="108" cy="30" r="2.5" fill="url(#grad)"/>
+
+  <!-- NECK -->
+  <path d="M84 46 C83 55 84 62 86 68"    stroke="url(#grad)" stroke-width="2.5"/>
+  <path d="M116 46 C117 55 116 62 114 68" stroke="url(#grad)" stroke-width="2.5"/>
+
+  <!-- FRONT LEFT FLIPPER -->
+  <path d="M50 100 C28 87 4 72 8 96 C12 116 36 118 50 108"
+        stroke="url(#grad)" stroke-width="3.5"/>
+
+  <!-- FRONT RIGHT FLIPPER -->
+  <path d="M150 100 C172 87 196 72 192 96 C188 116 164 118 150 108"
+        stroke="url(#grad)" stroke-width="3.5"/>
+
+  <!-- SHELL OUTLINE -->
+  <ellipse cx="100" cy="138" rx="60" ry="72"
+           stroke="url(#grad)" stroke-width="4"/>
+
+  <!-- VERTEBRAL AXIS (central spine) -->
+  <line x1="100" y1="68"  x2="100" y2="208"
+        stroke="url(#grad)" stroke-width="2"/>
+
+  <!-- TRANSVERSE SCUTE LINES -->
+  <path d="M51 97  Q100 91 149 97"   stroke="url(#grad)" stroke-width="1.7"/>
+  <path d="M41 128 Q100 122 159 128" stroke="url(#grad)" stroke-width="1.7"/>
+  <path d="M43 161 Q100 155 157 161" stroke="url(#grad)" stroke-width="1.7"/>
+  <path d="M57 188 Q100 183 143 188" stroke="url(#grad)" stroke-width="1.7"/>
+
+  <!-- COSTAL SCUTE DIAGONALS — left -->
+  <line x1="100" y1="97"  x2="44"  y2="114" stroke="url(#grad)" stroke-width="1.4"/>
+  <line x1="100" y1="128" x2="40"  y2="146" stroke="url(#grad)" stroke-width="1.4"/>
+  <line x1="100" y1="161" x2="49"  y2="176" stroke="url(#grad)" stroke-width="1.4"/>
+
+  <!-- COSTAL SCUTE DIAGONALS — right -->
+  <line x1="100" y1="97"  x2="156" y2="114" stroke="url(#grad)" stroke-width="1.4"/>
+  <line x1="100" y1="128" x2="160" y2="146" stroke="url(#grad)" stroke-width="1.4"/>
+  <line x1="100" y1="161" x2="151" y2="176" stroke="url(#grad)" stroke-width="1.4"/>
+
+  <!-- REAR LEFT FLIPPER -->
+  <path d="M43 165 C22 177 10 200 30 202 C48 203 58 183 58 170"
+        stroke="url(#grad)" stroke-width="3"/>
+
+  <!-- REAR RIGHT FLIPPER -->
+  <path d="M157 165 C178 177 190 200 170 202 C152 203 142 183 142 170"
+        stroke="url(#grad)" stroke-width="3"/>
+
+  <!-- TAIL -->
+  <path d="M94 208 Q100 222 106 208" stroke="url(#grad)" stroke-width="2.5"/>
+</svg>

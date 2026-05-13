@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { Mail, MapPin, Share2, Camera } from 'lucide-react';
@@ -12,9 +13,7 @@ export default async function Footer() {
           {/* About */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-full bg-[var(--color-primary)] flex items-center justify-center font-bold text-sm">
-                CC
-              </div>
+              <Image src="/logo.png" alt="Caretta Gazipaşa" width={80} height={80} unoptimized />
               <div>
                 <div className="font-bold text-white">Caretta Gazipaşa</div>
               </div>

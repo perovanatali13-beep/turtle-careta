@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
+import Image from 'next/image';
 import { Search, Menu, X, ChevronDown, Globe } from 'lucide-react';
 import { useRouter } from '@/i18n/navigation';
 
@@ -125,9 +126,7 @@ export default function Header() {
         <div className="flex items-center h-16 gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <div className="w-10 h-10 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-white font-bold text-sm">
-              CC
-            </div>
+            <Image src="/logo.png" alt="Caretta Gazipaşa" width={88} height={88} priority unoptimized className="h-11 w-auto" />
             <div className="hidden sm:block">
               <div className="font-bold text-[var(--color-primary)] text-sm leading-tight">
                 Caretta
