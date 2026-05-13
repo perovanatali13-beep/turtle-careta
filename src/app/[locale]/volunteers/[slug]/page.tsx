@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import { createPublicClient } from '@/lib/supabase/server';
 import { getLocalizedField } from '@/lib/supabase/types';
 import type { PageContent, Locale } from '@/lib/supabase/types';
+import FaqAccordion from '@/components/FaqAccordion';
 
 const VALID_SLUGS = ['info', 'faq'];
 
@@ -66,10 +67,20 @@ export default async function VolunteersPage({
         </div>
 
         {pageContent ? (
-          <div
-            className="prose prose-lg max-w-none text-[var(--color-text)]"
-            dangerouslySetInnerHTML={{ __html: pageContent }}
-          />
+          (() => {
+            try {
+              const faq = JSON.parse(pageContent);
+              if (Array.isArray(faq) && faq.length > 0) {
+                return <FaqAccordion items={faq} />;
+              }
+            } catch {}
+            return (
+              <div
+                className="prose prose-lg max-w-none text-[var(--color-text)]"
+                dangerouslySetInnerHTML={{ __html: pageContent }}
+              />
+            );
+          })()
         ) : (
           <div className="py-16 text-center text-[var(--color-text-muted)]">
             <span className="text-5xl block mb-4">🐢</span>

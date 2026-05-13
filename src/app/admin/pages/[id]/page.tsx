@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import PageForm from '../_components/PageForm';
+import FaqEditor from '../_components/FaqEditor';
 import type { PageContent } from '@/lib/supabase/types';
 
 const SECTION_LABELS: Record<string, string> = {
@@ -31,7 +32,10 @@ export default async function EditPagePage({
           {page.title_ru || page.slug}
         </h1>
       </div>
-      <PageForm page={page as PageContent} />
+      {page.slug === 'faq'
+        ? <FaqEditor page={page as PageContent} />
+        : <PageForm page={page as PageContent} />
+      }
     </div>
   );
 }
