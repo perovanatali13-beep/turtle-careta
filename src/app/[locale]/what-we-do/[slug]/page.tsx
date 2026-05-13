@@ -25,16 +25,24 @@ const SLUG_TO_KEY: Record<string, string> = {
 };
 
 async function getPage(slug: string): Promise<PageContent | null> {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  console.log('[what-we-do] slug:', slug);
+  console.log('[what-we-do] URL:', url ? url.slice(0, 30) + '...' : 'MISSING');
+  console.log('[what-we-do] KEY:', key ? 'present' : 'MISSING');
   try {
     const supabase = createPublicClient();
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('pages')
       .select('*')
       .eq('slug', slug)
       .eq('section', 'what-we-do')
       .single();
+    if (error) console.error('[what-we-do] error:', error);
+    console.log('[what-we-do] data found:', !!data);
     return data;
-  } catch {
+  } catch (err) {
+    console.error('[what-we-do] catch:', err);
     return null;
   }
 }
