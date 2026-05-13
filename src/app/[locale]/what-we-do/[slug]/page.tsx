@@ -4,7 +4,7 @@ export const revalidate = 0;
 import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { notFound } from 'next/navigation';
-import { createClient } from '@/lib/supabase/server';
+import { createPublicClient } from '@/lib/supabase/server';
 import { getLocalizedField } from '@/lib/supabase/types';
 import type { PageContent, Locale } from '@/lib/supabase/types';
 
@@ -26,7 +26,7 @@ const SLUG_TO_KEY: Record<string, string> = {
 
 async function getPage(slug: string): Promise<PageContent | null> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data } = await supabase
       .from('pages')
       .select('*')

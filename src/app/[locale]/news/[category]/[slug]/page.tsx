@@ -5,14 +5,14 @@ import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { notFound } from 'next/navigation';
 import { Calendar, ArrowLeft } from 'lucide-react';
-import { createClient } from '@/lib/supabase/server';
+import { createPublicClient } from '@/lib/supabase/server';
 import { getLocalizedField } from '@/lib/supabase/types';
 import type { NewsItem, Locale } from '@/lib/supabase/types';
 import { ClickableImage, ArticleContent } from '@/components/Lightbox';
 
 async function getNewsItem(category: string, slug: string): Promise<NewsItem | null> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data } = await supabase
       .from('news')
       .select('*')

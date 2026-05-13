@@ -2,14 +2,14 @@ import { getTranslations, getLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { notFound } from 'next/navigation';
 import NewsCard from '@/components/NewsCard';
-import { createClient } from '@/lib/supabase/server';
+import { createPublicClient } from '@/lib/supabase/server';
 import type { NewsItem, Locale, NewsCategory } from '@/lib/supabase/types';
 
 const VALID_CATEGORIES: NewsCategory[] = ['ecology', 'rescue', 'cleanup', 'coast', 'research'];
 
 async function getNewsByCategory(category: NewsCategory): Promise<NewsItem[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data } = await supabase
       .from('news')
       .select('*')

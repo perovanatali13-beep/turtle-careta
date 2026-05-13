@@ -1,6 +1,6 @@
 import { getTranslations, getLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
-import { createClient } from '@/lib/supabase/server';
+import { createPublicClient } from '@/lib/supabase/server';
 import { getLocalizedField } from '@/lib/supabase/types';
 import type { NewsItem, PageContent, Locale } from '@/lib/supabase/types';
 import { Search as SearchIcon, Calendar } from 'lucide-react';
@@ -17,7 +17,7 @@ interface SearchResult {
 async function search(query: string, locale: Locale): Promise<SearchResult[]> {
   if (!query.trim()) return [];
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const q = query.trim();
 
     const [newsRes, pagesRes] = await Promise.all([

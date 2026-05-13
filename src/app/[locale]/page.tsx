@@ -6,13 +6,13 @@ import { Link } from '@/i18n/navigation';
 import HeroSection from '@/components/HeroSection';
 import ActionCards from '@/components/ActionCards';
 import NewsCard from '@/components/NewsCard';
-import { createClient } from '@/lib/supabase/server';
+import { createPublicClient } from '@/lib/supabase/server';
 import type { NewsItem, Locale } from '@/lib/supabase/types';
 import { ArrowRight } from 'lucide-react';
 
 async function getLatestNews(): Promise<NewsItem[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data } = await supabase
       .from('news')
       .select('*')

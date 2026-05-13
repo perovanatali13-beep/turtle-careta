@@ -1,7 +1,7 @@
 import { getTranslations, getLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import NewsCard from '@/components/NewsCard';
-import { createClient } from '@/lib/supabase/server';
+import { createPublicClient } from '@/lib/supabase/server';
 import type { NewsItem, Locale, NewsCategory } from '@/lib/supabase/types';
 
 const CATEGORIES: { key: NewsCategory | 'all'; path: string }[] = [
@@ -15,7 +15,7 @@ const CATEGORIES: { key: NewsCategory | 'all'; path: string }[] = [
 
 async function getAllNews(): Promise<NewsItem[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data } = await supabase
       .from('news')
       .select('*')
