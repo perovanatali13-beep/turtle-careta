@@ -40,7 +40,6 @@ export default function Header() {
         { key: 'someoneTouchingNest', href: '/what-you-can-do/someone-touching-nest' },
         { key: 'beachRules', href: '/what-you-can-do/beach-rules' },
         { key: 'reportProblem', href: '/what-you-can-do/report-problem' },
-        { key: 'support', href: '/what-you-can-do/support', disabled: true },
       ],
     },
     {
@@ -58,6 +57,13 @@ export default function Header() {
         { key: 'publications', href: '/what-we-do/publications' },
         { key: 'hotelsCoast', href: '/what-we-do/hotels-coast' },
         { key: 'beachCleanup', href: '/what-we-do/beach-cleanup' },
+      ],
+    },
+    {
+      key: 'about',
+      dropdown: [
+        { key: 'whoWeAre', href: '/about/who-we-are' },
+        { key: 'supporters', href: '/about/supporters' },
       ],
     },
     {
@@ -134,49 +140,55 @@ export default function Header() {
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1 flex-1 justify-center">
-            {navItems.map((item) => (
-              <div key={item.key} className="relative">
-                <button
-                  onClick={() =>
-                    setOpenDropdown(openDropdown === item.key ? null : item.key)
-                  }
-                  className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap
-                    ${openDropdown === item.key
-                      ? 'bg-[var(--color-primary-light)] text-[var(--color-primary)]'
-                      : 'text-[var(--color-text)] hover:bg-gray-100'
-                    }`}
+            {navItems.map((item) => {
+              const firstHref = item.dropdown?.find(s => !s.disabled)?.href ?? '/';
+              return (
+                <div
+                  key={item.key}
+                  className="relative"
+                  onMouseEnter={() => setOpenDropdown(item.key)}
+                  onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  {t(item.key as Parameters<typeof t>[0])}
-                  <ChevronDown
-                    size={14}
-                    className={`transition-transform ${openDropdown === item.key ? 'rotate-180' : ''}`}
-                  />
-                </button>
+                  <Link
+                    href={firstHref}
+                    className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap
+                      ${openDropdown === item.key
+                        ? 'bg-[var(--color-primary-light)] text-[var(--color-primary)]'
+                        : 'text-[var(--color-text)] hover:bg-gray-100'
+                      }`}
+                  >
+                    {t(item.key as Parameters<typeof t>[0])}
+                    <ChevronDown
+                      size={14}
+                      className={`transition-transform ${openDropdown === item.key ? 'rotate-180' : ''}`}
+                    />
+                  </Link>
 
-                {openDropdown === item.key && item.dropdown && (
-                  <div className="absolute top-full left-0 mt-1 bg-white border border-[var(--color-border)] rounded-lg shadow-lg py-1 min-w-56 z-50">
-                    {item.dropdown.map((sub) => (
-                      sub.disabled ? (
-                        <span
-                          key={sub.key}
-                          className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed"
-                        >
-                          {t(sub.key as Parameters<typeof t>[0])}
-                        </span>
-                      ) : (
-                        <Link
-                          key={sub.key}
-                          href={sub.href}
-                          className="block px-4 py-2 text-sm text-[var(--color-text)] hover:bg-[var(--color-primary-light)] hover:text-[var(--color-primary)] transition-colors"
-                        >
-                          {t(sub.key as Parameters<typeof t>[0])}
-                        </Link>
-                      )
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+                  {openDropdown === item.key && item.dropdown && (
+                    <div className="absolute top-full left-0 bg-white border border-[var(--color-border)] rounded-lg shadow-lg py-1 min-w-56 z-50">
+                      {item.dropdown.map((sub) => (
+                        sub.disabled ? (
+                          <span
+                            key={sub.key}
+                            className="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed"
+                          >
+                            {t(sub.key as Parameters<typeof t>[0])}
+                          </span>
+                        ) : (
+                          <Link
+                            key={sub.key}
+                            href={sub.href}
+                            className="block px-4 py-2 text-sm text-[var(--color-text)] hover:bg-[var(--color-primary-light)] hover:text-[var(--color-primary)] transition-colors"
+                          >
+                            {t(sub.key as Parameters<typeof t>[0])}
+                          </Link>
+                        )
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </nav>
 
           {/* Right controls */}

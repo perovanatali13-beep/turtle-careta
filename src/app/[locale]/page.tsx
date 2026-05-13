@@ -1,6 +1,7 @@
 import { getTranslations, getLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import HeroSection from '@/components/HeroSection';
+import ActionCards from '@/components/ActionCards';
 import NewsCard from '@/components/NewsCard';
 import { createClient } from '@/lib/supabase/server';
 import type { NewsItem, Locale } from '@/lib/supabase/types';
@@ -29,6 +30,7 @@ export default async function HomePage() {
   return (
     <>
       <HeroSection />
+      <ActionCards locale={locale} />
 
       {/* Latest news */}
       <section className="py-16">
@@ -61,28 +63,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* About section */}
-      <section className="py-16 bg-[var(--color-sand)]">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-text)] mb-6">
-              О проекте Caretta Gazipaşa
-            </h2>
-            <p className="text-[var(--color-text-muted)] leading-relaxed text-lg">
-              Loggerhead sea turtles (<em>Caretta caretta</em>) come to the beaches of Gazipaşa
-              every summer to lay their eggs. Our team monitors nests 24 hours a day to protect
-              them from human disturbance and natural predators.
-            </p>
-            <Link
-              href="/what-we-do/caretta-conservation"
-              className="inline-flex items-center gap-2 mt-8 bg-[var(--color-primary)] text-white font-semibold px-6 py-3 rounded-xl hover:bg-[var(--color-primary-dark)] transition-colors"
-            >
-              {t('learnMore')}
-              <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

@@ -2,13 +2,21 @@ import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/server';
 import AdminSidebar from '../_components/AdminSidebar';
+import PublishToggle from './_components/PublishToggle';
 import type { NewsItem } from '@/lib/supabase/types';
 import { Plus, Pencil } from 'lucide-react';
+
+const CATEGORY_LABELS: Record<string, string> = {
+  ecology:  'Эко-акции',
+  rescue:   'Спасение',
+  cleanup:  'Уборка',
+  coast:    'Побережье',
+  research: 'Наука',
+};
 
 export default async function AdminNewsPage() {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
-
   if (!user) redirect('/admin/login');
 
   const { data: news } = await supabase
@@ -41,10 +49,10 @@ export default async function AdminNewsPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-[var(--color-border)] bg-gray-50">
-                  <th className="text-left px-6 py-3 font-medium text-[var(--color-text-muted)]">Заголовок (RU)</th>
+                  <th className="text-left px-6 py-3 font-medium text-[var(--color-text-muted)]">Заголовок</th>
                   <th className="text-left px-6 py-3 font-medium text-[var(--color-text-muted)]">Категория</th>
                   <th className="text-left px-6 py-3 font-medium text-[var(--color-text-muted)]">Дата</th>
-                  <th className="text-left px-6 py-3 font-medium text-[var(--color-text-muted)]">Статус</th>
+                  <th className="text-left px-6 py-3 font-medium text-[var(--color-text-muted)]">Опубликовано</th>
                   <th className="px-6 py-3" />
                 </tr>
               </thead>
@@ -52,20 +60,16 @@ export default async function AdminNewsPage() {
                 {(news as NewsItem[]).map((item) => (
                   <tr key={item.id} className="border-b border-[var(--color-border)] last:border-0 hover:bg-gray-50">
                     <td className="px-6 py-4 font-medium text-[var(--color-text)] max-w-xs truncate">
-                      {item.title_ru || '—'}
+                      {item.title_ru || item.slug || '—'}
                     </td>
-                    <td className="px-6 py-4 text-[var(--color-text-muted)]">{item.category}</td>
+                    <td className="px-6 py-4 text-[var(--color-text-muted)]">
+                      {CATEGORY_LABELS[item.category] ?? item.category}
+                    </td>
                     <td className="px-6 py-4 text-[var(--color-text-muted)]">
                       {new Date(item.published_at).toLocaleDateString('ru-RU')}
                     </td>
                     <td className="px-6 py-4">
-                      <span className={`text-xs font-medium px-2 py-1 rounded-full ${
-                        item.published
-                          ? 'bg-green-100 text-green-700'
-                          : 'bg-yellow-100 text-yellow-700'
-                      }`}>
-                        {item.published ? 'Опубликовано' : 'Черновик'}
-                      </span>
+                      <PublishToggle id={item.id} published={item.published} />
                     </td>
                     <td className="px-6 py-4">
                       <Link

@@ -1,5 +1,4 @@
 import { Link } from '@/i18n/navigation';
-import Image from 'next/image';
 import { Calendar } from 'lucide-react';
 import type { NewsItem, Locale } from '@/lib/supabase/types';
 import { getLocalizedField } from '@/lib/supabase/types';
@@ -39,11 +38,11 @@ export default function NewsCard({ news, locale }: NewsCardProps) {
         {/* Image */}
         <div className="relative h-48 bg-[var(--color-primary-light)] overflow-hidden">
           {news.image_url ? (
-            <Image
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
               src={news.image_url}
               alt={title}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">

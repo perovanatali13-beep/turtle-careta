@@ -1,11 +1,11 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import { Calendar, ArrowLeft } from 'lucide-react';
 import { createClient } from '@/lib/supabase/server';
 import { getLocalizedField } from '@/lib/supabase/types';
 import type { NewsItem, Locale } from '@/lib/supabase/types';
+import { ClickableImage, ArticleContent } from '@/components/Lightbox';
 
 async function getNewsItem(category: string, slug: string): Promise<NewsItem | null> {
   try {
@@ -69,16 +69,23 @@ export default async function NewsArticlePage({
           </time>
         </div>
 
+        {/* Main photo — max 700px, clickable */}
         {news.image_url && (
-          <div className="relative h-72 md:h-96 rounded-2xl overflow-hidden mb-10">
-            <Image src={news.image_url} alt={title} fill className="object-cover" />
+          <div className="mb-10 flex justify-start">
+            <ClickableImage
+              src={news.image_url}
+              alt={title}
+              className="w-full max-w-[500px] h-auto rounded-2xl shadow-sm"
+            />
           </div>
         )}
 
-        <div
-          className="prose prose-lg max-w-none text-[var(--color-text)] leading-relaxed"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+        {/* Article content — images inside are also clickable */}
+        {content ? (
+          <ArticleContent html={content} />
+        ) : (
+          <p className="text-[var(--color-text-muted)]" />
+        )}
 
         <div className="mt-12 pt-8 border-t border-[var(--color-border)]">
           <Link
