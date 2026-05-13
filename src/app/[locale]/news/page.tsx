@@ -15,14 +15,21 @@ const CATEGORIES: { key: NewsCategory | 'all'; path: string }[] = [
 
 async function getAllNews(): Promise<NewsItem[]> {
   try {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    console.log('[news] SUPABASE_URL:', url ? url.slice(0, 30) + '...' : 'MISSING');
+    console.log('[news] ANON_KEY:', key ? 'present' : 'MISSING');
     const supabase = createPublicClient();
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('news')
       .select('*')
       .eq('published', true)
       .order('published_at', { ascending: false });
+    if (error) console.error('[news] Supabase error:', error);
+    console.log('[news] rows returned:', data?.length ?? 0);
     return data ?? [];
-  } catch {
+  } catch (err) {
+    console.error('[news] catch:', err);
     return [];
   }
 }
