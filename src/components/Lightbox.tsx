@@ -86,7 +86,7 @@ export function ArticleContent({ html }: { html: string }) {
   return (
     <>
       <div
-        className="prose prose-lg max-w-none text-[var(--color-text)] leading-relaxed [&_img]:cursor-zoom-in [&_img]:rounded-xl [&_img]:max-w-[500px] [&_img]:w-full [&_img]:h-auto [&_img]:hover:opacity-90 [&_img]:transition-opacity"
+        className="prose prose-lg max-w-none text-[var(--color-text)] leading-relaxed [&_img]:cursor-zoom-in [&_img]:rounded-xl [&_img]:max-w-[500px] [&_img]:max-h-[400px] [&_img]:w-auto [&_img]:h-auto [&_img]:object-contain [&_img]:hover:opacity-90 [&_img]:transition-opacity"
         dangerouslySetInnerHTML={{ __html: html }}
         onClick={handleClick}
       />

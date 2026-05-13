@@ -75,7 +75,7 @@ export default async function NewsArticlePage({
             <ClickableImage
               src={news.image_url}
               alt={title}
-              className="w-full max-w-[500px] h-auto rounded-2xl shadow-sm"
+              className="max-w-[500px] max-h-[400px] w-auto h-auto rounded-2xl shadow-sm object-contain"
             />
           </div>
         )}
