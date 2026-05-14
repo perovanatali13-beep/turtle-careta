@@ -126,7 +126,7 @@ export default function Header() {
         <div className="flex items-center h-16 gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <Image src="/logo.png" alt="Caretta Gazipaşa" width={88} height={88} priority unoptimized className="h-11 w-auto" />
+            <Image src="/logo-header.png" alt="Caretta Gazipaşa" width={88} height={88} priority unoptimized className="h-11 w-auto" />
             <div className="hidden sm:block">
               <div className="font-bold text-[var(--color-primary)] text-sm leading-tight">
                 Caretta
