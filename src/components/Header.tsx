@@ -123,10 +123,10 @@ export default function Header() {
       className="bg-white border-b border-[var(--color-border)] sticky top-0 z-50 shadow-sm"
     >
       <div className="container">
-        <div className="flex items-center h-16 gap-4">
+        <div className="flex items-center h-24 gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <Image src="/logo-header.png" alt="Caretta Gazipaşa" width={88} height={88} priority unoptimized className="h-11 w-auto" />
+            <Image src="/logo-header.png" alt="Caretta Gazipaşa" width={176} height={176} priority unoptimized className="h-[88px] w-auto" />
             <div className="hidden sm:block">
               <div className="font-bold text-[var(--color-primary)] text-sm leading-tight">
                 Caretta
