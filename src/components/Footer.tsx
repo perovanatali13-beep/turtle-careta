@@ -13,7 +13,7 @@ export default async function Footer() {
           {/* About */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Image src="/logo.png" alt="Caretta Gazipaşa" width={80} height={80} unoptimized />
+              <Image src="/logo-footer.png" alt="Caretta Gazipaşa" width={100} height={100} unoptimized />
               <div>
                 <div className="font-bold text-white">Caretta Gazipaşa</div>
               </div>
@@ -94,8 +94,8 @@ export default async function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="container py-4">
+      <div>
+        <div className="container" style={{ paddingTop: '40px', paddingBottom: '16px' }}>
           <p className="text-center text-xs text-gray-500">
             © {new Date().getFullYear()} Caretta Gazipaşa. {t('footer.rights')}.
           </p>
