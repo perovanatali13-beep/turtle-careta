@@ -57,7 +57,8 @@ export default async function UsersPage() {
             <tbody>
               {list.map((u) => {
                 const isCurrentUser = u.id === user.id;
-                const isSuperAdmin = u.email === 'perova.natali13@gmail.com';
+                const ADMIN_EMAILS = ['perova.natali13@gmail.com', 'allsterlitamak@gmail.com'];
+                const isSuperAdmin = ADMIN_EMAILS.includes((u.email ?? '').toLowerCase());
                 return (
                   <tr key={u.id} className="border-b border-[var(--color-border)] last:border-0 hover:bg-gray-50">
                     <td className="px-6 py-4">

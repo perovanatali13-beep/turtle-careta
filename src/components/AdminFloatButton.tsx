@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Settings } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 
-const ADMIN_EMAIL = 'perova.natali13@gmail.com';
+const ADMIN_EMAILS = ['perova.natali13@gmail.com', 'allsterlitamak@gmail.com'];
 
 export default function AdminFloatButton() {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -12,11 +12,11 @@ export default function AdminFloatButton() {
   useEffect(() => {
     const supabase = createClient();
     supabase.auth.getUser().then(({ data: { user } }) => {
-      setIsAdmin(user?.email === ADMIN_EMAIL);
+      setIsAdmin(ADMIN_EMAILS.includes((user?.email ?? '').toLowerCase()));
     });
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setIsAdmin(session?.user?.email === ADMIN_EMAIL);
+      setIsAdmin(ADMIN_EMAILS.includes((session?.user?.email ?? '').toLowerCase()));
     });
 
     return () => subscription.unsubscribe();
