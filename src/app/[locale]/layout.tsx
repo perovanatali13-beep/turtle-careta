@@ -6,6 +6,7 @@ import { routing } from '@/i18n/routing';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import AdminFloatButton from '@/components/AdminFloatButton';
+import PageTracker from '@/components/PageTracker';
 import '../globals.css';
 
 export const metadata: Metadata = {
@@ -43,6 +44,7 @@ export default async function LocaleLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <AdminFloatButton />
+          <PageTracker />
         </NextIntlClientProvider>
       </body>
     </html>
