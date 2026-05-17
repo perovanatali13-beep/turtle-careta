@@ -1,15 +1,15 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { LayoutDashboard, Newspaper, FileText, Settings, LogOut } from 'lucide-react';
+import { LayoutDashboard, Newspaper, FileText, Users, LogOut } from 'lucide-react';
 import { createClient } from '@/lib/supabase/client';
 
 const NAV_ITEMS = [
   { href: '/admin/dashboard', label: 'Дашборд', icon: LayoutDashboard },
   { href: '/admin/news', label: 'Новости', icon: Newspaper },
   { href: '/admin/pages', label: 'Страницы', icon: FileText },
-  { href: '/admin/settings', label: 'Настройки', icon: Settings },
+  { href: '/admin/users', label: 'Пользователи', icon: Users },
 ];
 
 export default function AdminSidebar() {
