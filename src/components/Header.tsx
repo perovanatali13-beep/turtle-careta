@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useRef, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
@@ -6,6 +6,7 @@ import { Link, usePathname } from '@/i18n/navigation';
 import Image from 'next/image';
 import { Search, Menu, X, ChevronDown, Globe } from 'lucide-react';
 import { useRouter } from '@/i18n/navigation';
+import UserButton from '@/components/UserButton';
 
 interface DropdownItem {
   key: string;
@@ -221,6 +222,7 @@ export default function Header() {
               </button>
             )}
 
+                      <UserButton />
             {/* Language switcher */}
             <div className="relative">
               <button
